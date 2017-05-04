@@ -3,14 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>归档: 2017/4 | uncle Zhang&#39;s blog</title>
+  <title>uncle Zhang&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="###forEach循环 [1, 2 ,3, 4].forEach(alert); 等同于下面这个for循环 var array = [1, 2, 3, 4]; for (var k = 0, length = array.length; k &amp;lt; length; k++) {    alert(array[k]); } forEach方法中的function回调支持3个参数，第1个是遍历的数">
+<meta name="keywords">
+<meta property="og:type" content="article">
 <meta property="og:title" content="uncle Zhang's blog">
-<meta property="og:url" content="http://yoursite.com/archives/2017/04/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/04/10/forEach循环/index.html">
 <meta property="og:site_name" content="uncle Zhang's blog">
+<meta property="og:description" content="###forEach循环 [1, 2 ,3, 4].forEach(alert); 等同于下面这个for循环 var array = [1, 2, 3, 4]; for (var k = 0, length = array.length; k &amp;lt; length; k++) {    alert(array[k]); } forEach方法中的function回调支持3个参数，第1个是遍历的数">
+<meta property="og:updated_time" content="2017-03-30T11:54:00.223Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="uncle Zhang's blog">
+<meta name="twitter:description" content="###forEach循环 [1, 2 ,3, 4].forEach(alert); 等同于下面这个for循环 var array = [1, 2, 3, 4]; for (var k = 0, length = array.length; k &amp;lt; length; k++) {    alert(array[k]); } forEach方法中的function回调支持3个参数，第1个是遍历的数">
   
     <link rel="alternate" href="/atom.xml" title="uncle Zhang&#39;s blog" type="application/atom+xml">
   
@@ -59,52 +64,71 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/04/10/hello-world/" class="archive-article-date">
-  <time datetime="2017-04-09T17:40:06.209Z" itemprop="datePublished">4月 10</time>
+        <section id="main"><article id="post-forEach循环" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/10/forEach循环/" class="article-date">
+  <time datetime="2017-04-09T17:40:06.179Z" itemprop="datePublished">2017-04-10</time>
 </a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/10/hello-world/">Hello World</a>
-    </h1>
-  
+        <p>###forEach循环</p>
+<p><code>[1, 2 ,3, 4].forEach(alert);</code></p>
+<p>等同于下面这个for循环</p>
+<pre><code>var array = [1, 2, 3, 4];
+for (var k = 0, length = array.length; k &lt; length; k++) {
+   alert(array[k]);
+}
+</code></pre><p>forEach方法中的function回调支持3个参数，第1个是遍历的数组内容；第2个是对应的数组索引，第3个是数组本身。</p>
+<pre><code>[].forEach(function(value, index, array) {
+    // ...
+});
+</code></pre><p>对比jQuery中的$.each方法：</p>
+<pre><code>$.each([], function(index, value, array) {
+    // ...
+});
+</code></pre><p><strong>第1个和第2个参数正好相反!</strong></p>
+<p>若浏览器不支持，可从Array原型扩展可以实现以上全部功能。</p>
+<pre><code>if (typeof Array.prototype.forEach != &quot;function&quot;) {
+  Array.prototype.forEach = function() {
+    /* 实现 */
+  };
+}
+</code></pre><p>下面的for循环用来遍历一个数组：</p>
+<pre><code>for(var i = 0 , len = obj.length; i &lt; len; i++){
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/04/10/forEach循环/" class="archive-article-date">
-  <time datetime="2017-04-09T17:40:06.179Z" itemprop="datePublished">4月 10</time>
-</a>
+}
+</code></pre><p>下面的for in循环用来遍历一个非数组：</p>
+<pre><code>for(var key in obj){
+
+}
+</code></pre>
       
-    </header>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/10/forEach循环/" data-id="cj1c70ugx00011gg9slgtf5bt" class="article-share-link">Share</a>
+      
+      
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/04/10/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
