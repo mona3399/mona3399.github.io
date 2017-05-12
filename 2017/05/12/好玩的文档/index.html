@@ -3,23 +3,18 @@
 <head>
   <meta charset="utf-8" />
   
-  <title>Migemo</title>
+  <title>这是一个很好玩的 | Migemo</title>
   <meta name="author" content="zyl" />
 
   
-  <meta name="description" content="###forEach循环
-[1, 2 ,3, 4].forEach(alert);
-等同于下面这个for循环
-var array = [1, 2, 3, 4];
-for (var k = 0, length = array.length; k &amp;lt; length; k++) {
-   alert" />
+  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in " />
   
 
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-  
+  <meta property="og:title" content="这是一个很好玩的" />
   <meta property="og:site_name" content="Migemo" />
 
   
@@ -68,47 +63,26 @@ for (var k = 0, length = array.length; k &amp;lt; length; k++) {
     <header>
       
         <div class="icon"></div>
-        <time datetime="2017-04-28T12:24:15.900Z"><a href="/2017/04/28/forEach循环/">2017-04-28</a></time>
+        <time datetime="2017-05-12T14:02:59.595Z"><a href="/2017/05/12/好玩的文档/">2017-05-12</a></time>
       
       
   
-    <h1 class="title"></h1>
+    <h1 class="title">这是一个很好玩的</h1>
   
 
     </header>
     <div class="entry">
       
-        <p>###forEach循环</p>
-<p><code>[1, 2 ,3, 4].forEach(alert);</code></p>
-<p>等同于下面这个for循环</p>
-<pre><code>var array = [1, 2, 3, 4];
-for (var k = 0, length = array.length; k &lt; length; k++) {
-   alert(array[k]);
-}
-</code></pre><p>forEach方法中的function回调支持3个参数，第1个是遍历的数组内容；第2个是对应的数组索引，第3个是数组本身。</p>
-<pre><code>[].forEach(function(value, index, array) {
-    // ...
-});
-</code></pre><p>对比jQuery中的$.each方法：</p>
-<pre><code>$.each([], function(index, value, array) {
-    // ...
-});
-</code></pre><p><strong>第1个和第2个参数正好相反!</strong></p>
-<p>若浏览器不支持，可从Array原型扩展可以实现以上全部功能。</p>
-<pre><code>if (typeof Array.prototype.forEach != &quot;function&quot;) {
-  Array.prototype.forEach = function() {
-    /* 实现 */
-  };
-}
-</code></pre><p>下面的for循环用来遍历一个数组：</p>
-<pre><code>for(var i = 0 , len = obj.length; i &lt; len; i++){
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
-}
-</code></pre><p>下面的for in循环用来遍历一个非数组：</p>
-<pre><code>for(var key in obj){
-
-}
-</code></pre>
       
     </div>
     
