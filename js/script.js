@@ -1,96 +1,149 @@
-(function ($, window) {
- 
-    var App = App || {
-        init: function () {
-            $('.js-toggle-search').on('click', function () {
-                $('.js-search').toggleClass('is-visible');
-            });
- 
-            $('.js-next a').on('click', function (e) {
-                $(infinite_scroll.contentSelector).infinitescroll(infinite_scroll);
- 
-                var $body = $('body');
- 
-                $body.scrollTop($body.scrollTop() - 1);
- 
-                e.preventDefault();
-            })
- 
-            $(window).keydown(function (event) {
-                if (event.keyCode == 27) {
-                    if ($('.js-search').attr('class').indexOf('is-visible') > 0) {
-                        $('.js-search').removeClass('is-visible');
-                    }
-                }
-            });
- 
-            $('.js-search .text-input').keydown(function (event) {
-                if (event.keyCode == 13) {
-                    location.href = 'https://www.google.com/search?q=site:yumemor.com ' + $(this).val();
-                    return false;
-                }
-            })
-        }
-    };
- 
+(function($){
+  // Search
+  var $searchWrap = $('#search-form-wrap'),
+    isSearchAnim = false,
+    searchAnimDuration = 200;
 
-    $(App.init);
+  var startSearchAnim = function(){
+    isSearchAnim = true;
+  };
 
-    $(function(){
- 
-        var navToggle = $('#nav-toggle'),
-            nav = $('nav'),
-            navLinks = nav.find('a');
- 
-        navToggle.on('click', function () {
-            navToggle.toggleClass('active');
-            nav.toggleClass('open');
-            return false;
-        });
-        navLinks.on('click', function () {
-            navToggle.toggleClass('active');
-            nav.toggleClass('open');
-        });
- 
-        $(document).on('click', function () {
-            if (nav.hasClass('open')) {
-                navToggle.toggleClass('active');
-                nav.toggleClass('open');
-            }
-        });
- 
-        $('.btn-slide').click(function () {
-            $('#panel').slideToggle("slow");
-            $(this).toggleClass("active");
-            return false;
-        });
- 
-        $(window).scroll(function () {
-            var header = $('header');
- 
-            if ($(this).scrollTop() > 1) {
-                header.addClass("scrolled");
-            } else {
-                header.removeClass("scrolled");
-            }
-        });
- 
-        $("#social-share").click(function () {
-            $("#social").toggleClass("visible").slideToggle(200);
-        });
- 
-        if ($('.welcome')[0]) {
-            $('.author-info').hide();
-            $('span.info-edit').click(function () {
-                $('.author-info').toggle();
-            });
-        }
+  var stopSearchAnim = function(callback){
+    setTimeout(function(){
+      isSearchAnim = false;
+      callback && callback();
+    }, searchAnimDuration);
+  };
 
-        var bannerNode = $('.top-image');
-        if(bannerNode.data('enable')){
-            var index = parseInt((Math.random() * 4) + 1);
-            bannerNode.attr('style','background-image:url(/banner/'+index+'.jpg)');
-        }
-    })
+  $('#nav-search-btn').on('click', function(){
+    if (isSearchAnim) return;
 
-}(jQuery, window));
+    startSearchAnim();
+    $searchWrap.addClass('on');
+    stopSearchAnim(function(){
+      $('.search-form-input').focus();
+    });
+  });
+
+  $('.search-form-input').on('blur', function(){
+    startSearchAnim();
+    $searchWrap.removeClass('on');
+    stopSearchAnim();
+  });
+
+  // Share
+  /*$('body').on('click', function(){
+    $('.article-share-box.on').removeClass('on');
+  }).on('click', '.article-share-link', function(e){
+    e.stopPropagation();
+
+    var $this = $(this),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      id = 'article-share-box-' + $this.attr('data-id'),
+      offset = $this.offset();
+
+    if ($('#' + id).length){
+      var box = $('#' + id);
+
+      if (box.hasClass('on')){
+        box.removeClass('on');
+        return;
+      }
+    } else {
+      var html = [
+        '<div id="' + id + '" class="article-share-box">',
+          '<input class="article-share-input" value="' + url + '">',
+          '<div class="article-share-links">',
+			'<a href="http://tieba.baidu.com/f/commit/share/openShareApi?url=' + encodedUrl + '" class="article-share-tieba" target="_blank" title="百度贴吧"></a>',
+			'<a href="http://service.weibo.com/share/share.php?url=' + encodedUrl + '" class="article-share-weibo" target="_blank" title="新浪微博"></a>',
+			'<a href="http://share.v.t.qq.com/index.php?c=share&a=index&url=' + encodedUrl + '" class="article-share-tqq" target="_blank" title="腾讯微博"></a>',
+			'<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '" class="article-share-renren" target="_blank" title="人人"></a>',
+          '</div>',
+        '</div>'
+      ].join('');
+
+      var box = $(html);
+
+      $('body').append(box);
+    }
+
+    $('.article-share-box.on').hide();
+
+    box.css({
+      top: offset.top + 25,
+      left: offset.left
+    }).addClass('on');
+  }).on('click', '.article-share-box', function(e){
+    e.stopPropagation();
+  }).on('click', '.article-share-box-input', function(){
+    $(this).select();
+  }).on('click', '.article-share-box-link', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+
+    window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+  });*/
+
+  // Caption
+  $('.article-entry').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+
+      var alt = this.alt;
+
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+
+  if ($.fancybox){
+    $('.fancybox').fancybox();
+  }
+
+  // Mobile nav
+  var $container = $('#container'),
+    isMobileNavAnim = false,
+    mobileNavAnimDuration = 200;
+
+  var startMobileNavAnim = function(){
+    isMobileNavAnim = true;
+  };
+
+  var stopMobileNavAnim = function(){
+    setTimeout(function(){
+      isMobileNavAnim = false;
+    }, mobileNavAnimDuration);
+  }
+
+  $('#main-nav-toggle').on('click', function(){
+    if (isMobileNavAnim) return;
+
+    startMobileNavAnim();
+    $container.toggleClass('mobile-nav-on');
+    stopMobileNavAnim();
+  });
+
+  $('#wrap').on('click', function(){
+    if (isMobileNavAnim || !$container.hasClass('mobile-nav-on')) return;
+
+    $container.removeClass('mobile-nav-on');
+  });
+  
+    // link
+    var $linkUl = $('#link-list');
+    var $list = $('#link-list li');
+    $linkUl.empty();
+    var count = $list.length;
+    for(var i = 0; i < count; i++)
+    {
+        var ran = Math.floor(Math.random() * $list.length);
+        $linkUl.append($list.eq(ran));
+        $list.splice(ran, 1);
+    }
+})(jQuery);
