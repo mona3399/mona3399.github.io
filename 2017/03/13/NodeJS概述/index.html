@@ -3,16 +3,21 @@
 <head>
   <meta charset="utf-8" />
   
-  <title>Migemo</title>
+  <title>Nodejs概述 | Migemo</title>
   <meta name="author" content="zyl" />
 
+  
+  <meta name="description" content="1.为什么要学习Nodejs?  增加就业  降低学习成本  语言本身存在价值
+2.什么是javaScript?  是一门脚本语言  运行在浏览器(运行丰v8引擎)
+3.什么是浏览器引擎?  转换  可移植性  双核清浏览器  –移植了IE和Chrome
+4.JavaScript在浏览器中能做什么?" />
   
 
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-  
+  <meta property="og:title" content="Nodejs概述" />
   <meta property="og:site_name" content="Migemo" />
 
   
@@ -55,8 +60,7 @@
 </nav>
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-  <article class="post">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
   <div class="post-content">
     <header>
@@ -66,7 +70,7 @@
       
       
   
-    <h1 class="title"><a href="/2017/03/13/NodeJS概述/">Nodejs概述</a></h1>
+    <h1 class="title">Nodejs概述</h1>
   
 
     </header>
@@ -110,78 +114,6 @@
 
 
 
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-05-17T02:14:38.000Z"><a href="/2015/05/17/forEach循环-1/">2015-05-17</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/05/17/forEach循环-1/">forEach循环</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p><code>[1, 2 ,3, 4].forEach(alert);</code></p>
-<p>等同于下面这个for循环</p>
-<pre><code>var array = [1, 2, 3, 4];
-for (var k = 0, length = array.length; k &lt; length; k++) {
-   alert(array[k]);
-}
-</code></pre><p>forEach方法中的function回调支持3个参数，第1个是遍历的数组内容；第2个是对应的数组索引，第3个是数组本身。</p>
-<pre><code>[].forEach(function(value, index, array) {
-    // 
-});
-</code></pre><p>对比jQuery中的$.each方法：</p>
-<pre><code>$.each([], function(index, value, array) {
-    // ...
-});
-</code></pre><p><strong>第1个和第2个参数正好相反!</strong></p>
-<p>若浏览器不支持，可从Array原型扩展可以实现以上全部功能。</p>
-<pre><code>if (typeof Array.prototype.forEach != &quot;function&quot;) {
-  Array.prototype.forEach = function() {
-    /* 实现 */
-  };
-}
-</code></pre><p>下面的for循环用来遍历一个数组：</p>
-<pre><code>for(var i = 0 , len = obj.length; i &lt; len; i++){
-
-}
-</code></pre><p>下面的for in循环用来遍历一个非数组：</p>
-<pre><code>for(var key in obj){
-
-}
-</code></pre>
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-
-<nav id="pagination">
-  
-</nav>
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
