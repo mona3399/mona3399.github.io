@@ -129,37 +129,46 @@ for (var k = 0, length = array.length; k &lt; length; k++) {
     <header>
       
         <div class="icon"></div>
-        <time datetime="2017-03-17T12:11:22.000Z"><a href="/2017/03/17/Nodejs概述-0/">2017-03-17</a></time>
+        <time datetime="2015-05-17T02:14:38.000Z"><a href="/2015/05/17/forEach循环-1/">2015-05-17</a></time>
       
       
   
-    <h1 class="title"><a href="/2017/03/17/Nodejs概述-0/">Nodejs概述</a></h1>
+    <h1 class="title"><a href="/2015/05/17/forEach循环-1/">forEach循环</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <hr>
-<p>title: Nodejs概述</p>
-<h2 id="date-2017-03-13-16-50-30"><a href="#date-2017-03-13-16-50-30" class="headerlink" title="date:2017-03-13 16:50:30"></a>date:2017-03-13 16:50:30</h2><p>1.为什么要学习Nodejs?<br>  增加就业<br>  降低学习成本<br>  语言本身存在价值</p>
-<p>2.什么是javaScript?<br>  是一门脚本语言<br>  运行在浏览器(运行丰v8引擎)</p>
-<p>3.什么是浏览器引擎?<br>  转换  可移植性<br>  双核清浏览器  –移植了IE和Chrome</p>
-<p>4.JavaScript在浏览器中能做什么?<br>  表单校验<br>  DOM操作<br>  AJAX</p>
-<p>5.JavaScript在浏览器中不能干什么?<br>  不能打操作文件<br>  不能访问计算机硬件</p>
-<p>6.哪些因素决定了编程语言的能力?<br> java  跨平台(操作系统)<br> PHP   跨平台(既是语言又是环境)<br> C#  mono<br> 根据运行环境来决定</p>
-<p>7.什么是NOde.js?</p>
-<p>  不是前端的框架<br>  NOde.js是一个Javascript</p>
-<p>8.Node.js特点?<br>  1.单线程(但是底层是多线程)<br>  2.非阻塞I/O<br>  3.事件驱动</p>
-<p>9.Node.js适合做什么??<br>  适合做高并发I/O,低负荷,也适合用来做websocket,API等<br>Node Version Manager</p>
-<pre><code>NVm安装
-</code></pre><p>nvm install 6.10.3(默认是64位)0<br>//settings.txt文件打开<br>nvm use 6.10.3<br>node -v</p>
-<p>nvm install安装版本号<br>切换指定的版本<br>nvm use 7.10.0 切换到7.10.0<br>node -v 回到终端</p>
-<p>运行nvm<br>搜索输入 cmd<br>        pow</p>
-<p>nvm ls 查看底下目录<br>nvm ls#查看<br>nvm uninstall 7.10.0 卸载<br>nvm current 显示当前版本号//</p>
-<p>vscode-icons搜索装扫插件<br>Guides安装</p>
-<p>服务器<br>1.Apache 1.天生通能处理http请求,从早到晚 node不一样,因为node只是一个运行<br>         2.node有提供一个模块叫http.只要我们调用http模块创建服务器<br>2.PHP</p>
-<p>运行Node.js<br>cd切换文件扔进来<br>ls<br>dir<br>ls</p>
+        <p><code>[1, 2 ,3, 4].forEach(alert);</code></p>
+<p>等同于下面这个for循环</p>
+<pre><code>var array = [1, 2, 3, 4];
+for (var k = 0, length = array.length; k &lt; length; k++) {
+   alert(array[k]);
+}
+</code></pre><p>forEach方法中的function回调支持3个参数，第1个是遍历的数组内容；第2个是对应的数组索引，第3个是数组本身。</p>
+<pre><code>[].forEach(function(value, index, array) {
+    // 
+});
+</code></pre><p>对比jQuery中的$.each方法：</p>
+<pre><code>$.each([], function(index, value, array) {
+    // ...
+});
+</code></pre><p><strong>第1个和第2个参数正好相反!</strong></p>
+<p>若浏览器不支持，可从Array原型扩展可以实现以上全部功能。</p>
+<pre><code>if (typeof Array.prototype.forEach != &quot;function&quot;) {
+  Array.prototype.forEach = function() {
+    /* 实现 */
+  };
+}
+</code></pre><p>下面的for循环用来遍历一个数组：</p>
+<pre><code>for(var i = 0 , len = obj.length; i &lt; len; i++){
 
+}
+</code></pre><p>下面的for in循环用来遍历一个非数组：</p>
+<pre><code>for(var key in obj){
+
+}
+</code></pre>
       
     </div>
     
@@ -205,7 +214,7 @@ for (var k = 0, length = array.length; k &lt; length; k++) {
       </li>
     
       <li>
-        <a href="/2017/03/17/Nodejs概述-0/">Nodejs概述</a>
+        <a href="/2015/05/17/forEach循环-1/">forEach循环</a>
       </li>
     
   </ul>
