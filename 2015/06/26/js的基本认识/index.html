@@ -3,18 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Migemo</title>
+  <title>js的基本认识 | Migemo</title>
 
   <!-- keywords -->
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Migemo">
-<meta property="og:url" content="http://megimo.com/index.html">
+  <meta name="description" content="一.js具体的作用js可以操作样式(css):直接修改某一个盒子的高度,获取标签的方法是getelementById();js可以操作结构(html):设置一个双标签的内容的是.innerHTML,包含了标签的中间的所有的东西二.事件的基本认识 事件的三要素:事件源:就是谁被触发了,事件属性:就是你做了什么导致了结果,事件指令:就是事件出发的结果或者影响或者事件触发后要去做的事情,形式是fu">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js的基本认识">
+<meta property="og:url" content="http://megimo.com/2015/06/26/js的基本认识/index.html">
 <meta property="og:site_name" content="Migemo">
+<meta property="og:description" content="一.js具体的作用js可以操作样式(css):直接修改某一个盒子的高度,获取标签的方法是getelementById();js可以操作结构(html):设置一个双标签的内容的是.innerHTML,包含了标签的中间的所有的东西二.事件的基本认识 事件的三要素:事件源:就是谁被触发了,事件属性:就是你做了什么导致了结果,事件指令:就是事件出发的结果或者影响或者事件触发后要去做的事情,形式是fu">
+<meta property="og:updated_time" content="2017-05-26T15:23:07.877Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Migemo">
+<meta name="twitter:title" content="js的基本认识">
+<meta name="twitter:description" content="一.js具体的作用js可以操作样式(css):直接修改某一个盒子的高度,获取标签的方法是getelementById();js可以操作结构(html):设置一个双标签的内容的是.innerHTML,包含了标签的中间的所有的东西二.事件的基本认识 事件的三要素:事件源:就是谁被触发了,事件属性:就是你做了什么导致了结果,事件指令:就是事件出发的结果或者影响或者事件触发后要去做的事情,形式是fu">
   
     <link rel="alternative" href="/atom.xml" title="Migemo" type="application/atom+xml">
   
@@ -145,82 +150,7 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-NodeJS概述" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/03/13/NodeJS概述/" class="article-date">
-  	<time datetime="2017-03-13T08:50:30.000Z" itemprop="datePublished">2017-03-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/13/NodeJS概述/">
-        Nodejs概述
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.为什么要学习Nodejs?<br>  增加就业<br>  降低学习成本<br>  语言本身存在价值</p>
-<p>2.什么是javaScript?<br>  是一门脚本语言<br>  运行在浏览器(运行丰v8引擎)</p>
-<p>3.什么是浏览器引擎?<br>  转换  可移植性<br>  双核清浏览器  –移植了IE和Chrome2</p>
-<p>4.JavaScript在浏览器中能做什么?<br>  表单校验<br>  DOM操作<br>  AJAX</p>
-<p>5.JavaScript在浏览器中不能干什么?<br>  不能打操作文件<br>  不能访问计算机硬件</p>
-<p>6.哪些因素决定了编程语言的能力?<br> java  跨平台(操作系统)<br> PHP   跨平台(既是语言又是环境)<br> C#  mono<br> 根据运行环境来决定</p>
-<p>7.什么是NOde.js?</p>
-<p>  不是前端的框架<br>  NOde.js是一个Javascript</p>
-<p>8.Node.js特点?<br>  1.单线程(但是底层是多线程)<br>  2.非阻塞I/O<br>  3.事件驱动</p>
-<p>9.Node.js适合做什么??<br>  适合做高并发I/O,低负荷,也适合用来做websocket,API等<br>Node Version Manager</p>
-<pre><code>NVm安装
-</code></pre><p>nvm install 6.10.3(默认是64位)0<br>//settings.txt文件打开<br>nvm use 6.10.3<br>node -v</p>
-<p>nvm install安装版本号<br>切换指定的版本<br>nvm use 7.10.0 切换到7.10.0<br>node -v 回到终端</p>
-<p>运行nvm<br>搜索输入 cmd<br>        pow</p>
-<p>nvm ls 查看底下目录<br>nvm ls#查看<br>nvm uninstall 7.10.0 卸载<br>nvm current 显示当前版本号//</p>
-<p>vscode-icons搜索装扫插件<br>Guides安装</p>
-<p>服务器<br>1.Apache 1.天生通能处理http请求,从早到晚 node不一样,因为node只是一个运行<br>         2.node有提供一个模块叫http.只要我们调用http模块创建服务器<br>2.PHP</p>
-<p>运行Node.js<br>cd切换文件扔进来<br>ls<br>dir<br>ls</p>
-<p>ctrk+~</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-js的基本认识" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-js的基本认识" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2015/06/26/js的基本认识/" class="article-date">
@@ -236,15 +166,21 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/06/26/js的基本认识/">
-        js的基本认识
-        
-      </a>
+    <h1 class="article-title" itemprop="name">
+      js的基本认识
+      
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -256,111 +192,51 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/05/17/forEach循环-1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          forEach循环
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/13/NodeJS概述/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Nodejs概述</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
 
-
-
-
-
-
-  
-    <article id="post-forEach循环-1" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/05/17/forEach循环-1/" class="article-date">
-  	<time datetime="2015-05-17T02:14:38.000Z" itemprop="datePublished">2015-05-17</time>
-</a>
+<div class="ds-share share" data-thread-key="js的基本认识" data-title="js的基本认识" data-url="http://megimo.com/2015/06/26/js的基本认识/"  data-images="http://img5.duitang.com/uploads/item/201603/23/20160323203945_zuARx.gif" data-content="js的基本认识">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
     </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/17/forEach循环-1/">
-        forEach循环
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><code>[1, 2 ,3, 4].forEach(alert);</code></p>
-<p>等同于下面这个for循环</p>
-<pre><code>var array = [1, 2, 3, 4];
-for (var k = 0, length = array.length; k &lt; length; k++) {
-   alert(array[k]);
-}
-</code></pre><p>forEach方法中的function回调支持3个参数，第1个是遍历的数组内容；第2个是对应的数组索引，第3个是数组本身。</p>
-<pre><code>[].forEach(function(value, index, array) {
-    // 
-});
-</code></pre><p>对比jQuery中的$.each方法：</p>
-<pre><code>$.each([], function(index, value, array) {
-    // ...
-});
-</code></pre><p><strong>第1个和第2个参数正好相反!</strong></p>
-<p>若浏览器不支持，可从Array原型扩展可以实现以上全部功能。</p>
-<pre><code>if (typeof Array.prototype.forEach != &quot;function&quot;) {
-  Array.prototype.forEach = function() {
-    /* 实现 */
-  };
-}
-</code></pre><p>下面的for循环用来遍历一个数组：</p>
-<pre><code>for(var i = 0 , len = obj.length; i &lt; len; i++){
-
-}
-</code></pre><p>下面的for in循环用来遍历一个非数组：</p>
-<pre><code>for(var key in obj){
-
-}
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
+ </div>
+ 
 
 
 
 
 
-
-
-  
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -384,8 +260,8 @@ for (var k = 0, length = array.length; k &lt; length; k++) {
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
